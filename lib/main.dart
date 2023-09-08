@@ -97,67 +97,67 @@ class _MyAppState extends State<MyApp> {
     await _jitsiMeetPlugin.join(options, listener);
   }
 
-  hangUp() async {
-    await _jitsiMeetPlugin.hangUp();
-  }
-
-  setAudioMuted(bool? muted) async {
-    var a = await _jitsiMeetPlugin.setAudioMuted(muted!);
-    debugPrint("$a");
-    setState(() {
-      audioMuted = muted;
-    });
-  }
-
-  setVideoMuted(bool? muted) async {
-    var a = await _jitsiMeetPlugin.setVideoMuted(muted!);
-    debugPrint("$a");
-    setState(() {
-      videoMuted = muted;
-    });
-  }
-
-  sendEndpointTextMessage() async {
-    var a = await _jitsiMeetPlugin.sendEndpointTextMessage(message: "HEY");
-    debugPrint("$a");
-
-    for (var p in participants) {
-      var b =
-      await _jitsiMeetPlugin.sendEndpointTextMessage(to: p, message: "HEY");
-      debugPrint("$b");
-    }
-  }
-
-  toggleScreenShare(bool? enabled) async {
-    await _jitsiMeetPlugin.toggleScreenShare(enabled!);
-
-    setState(() {
-      screenShareOn = enabled;
-    });
-  }
-
-  openChat() async {
-    await _jitsiMeetPlugin.openChat();
-  }
-
-  sendChatMessage() async {
-    var a = await _jitsiMeetPlugin.sendChatMessage(message: "HEY1");
-    debugPrint("$a");
-
-    for (var p in participants) {
-      a = await _jitsiMeetPlugin.sendChatMessage(to: p, message: "HEY2");
-      debugPrint("$a");
-    }
-  }
-
-  closeChat() async {
-    await _jitsiMeetPlugin.closeChat();
-  }
-
-  retrieveParticipantsInfo() async {
-    var a = await _jitsiMeetPlugin.retrieveParticipantsInfo();
-    debugPrint("$a");
-  }
+  // hangUp() async {
+  //   await _jitsiMeetPlugin.hangUp();
+  // }
+  //
+  // setAudioMuted(bool? muted) async {
+  //   var a = await _jitsiMeetPlugin.setAudioMuted(muted!);
+  //   debugPrint("$a");
+  //   setState(() {
+  //     audioMuted = muted;
+  //   });
+  // }
+  //
+  // setVideoMuted(bool? muted) async {
+  //   var a = await _jitsiMeetPlugin.setVideoMuted(muted!);
+  //   debugPrint("$a");
+  //   setState(() {
+  //     videoMuted = muted;
+  //   });
+  // }
+  //
+  // sendEndpointTextMessage() async {
+  //   var a = await _jitsiMeetPlugin.sendEndpointTextMessage(message: "HEY");
+  //   debugPrint("$a");
+  //
+  //   for (var p in participants) {
+  //     var b =
+  //     await _jitsiMeetPlugin.sendEndpointTextMessage(to: p, message: "HEY");
+  //     debugPrint("$b");
+  //   }
+  // }
+  //
+  // toggleScreenShare(bool? enabled) async {
+  //   await _jitsiMeetPlugin.toggleScreenShare(enabled!);
+  //
+  //   setState(() {
+  //     screenShareOn = enabled;
+  //   });
+  // }
+  //
+  // openChat() async {
+  //   await _jitsiMeetPlugin.openChat();
+  // }
+  //
+  // sendChatMessage() async {
+  //   var a = await _jitsiMeetPlugin.sendChatMessage(message: "HEY1");
+  //   debugPrint("$a");
+  //
+  //   for (var p in participants) {
+  //     a = await _jitsiMeetPlugin.sendChatMessage(to: p, message: "HEY2");
+  //     debugPrint("$a");
+  //   }
+  // }
+  //
+  // closeChat() async {
+  //   await _jitsiMeetPlugin.closeChat();
+  // }
+  //
+  // retrieveParticipantsInfo() async {
+  //   var a = await _jitsiMeetPlugin.retrieveParticipantsInfo();
+  //   debugPrint("$a");
+  // }
 
 
   @override
